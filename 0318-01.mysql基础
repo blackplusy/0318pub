@@ -66,6 +66,53 @@ b.mysql基础
 		DML 数据库操作语言  insert update delete
 		DCL 数据库控制语言  grant  revoke
 		DQL 数据库查询语言  select
+c.表结构
+	c1.数据类型
+		字符  'abc' '1234'     char  varchar
+		数字   123             int
+		日期   2000-01-01      date
+		注意：字符类型一定要限制长度
+		注意：char和varchar的区别?
+		char(6) 		定长，长度固定，速度快
+		varchar(6)		变长，长度根据数据变化，速度稍慢
+	c2.表结构的创建
+		语法：create table 表名(
+			列名  数据类型，
+			列名  数据类型，
+			。。。
+		);
+		注意：最后一个列不需要加单引号
+		需求：创建表商品(goods),商品名称(name) 字符类型，最多10个字符,商品价格(price) 数字类型，出场日期(ddate) 日期类型
+		create table goods(
+			name  char(10),
+			price int,
+			ddate date
+			);
+		补充：查看表结构的方法：desc 表名;
+	c3.表结构的修改
+		1>修改数据类型
+		需求：商品表中修改商品id(gid)的数据类型为数字类型
+		alter table goods modify gid int;
+		2>修改列名
+		需求:修改商品表中商品id(gid)为pid
+		alter table goods rename column gid to pid;--标准修改
+		alter table goods change gid  pid char;--mysql 5.5版本修改方式
+		注意：https://dev.mysql.com/doc/refman/5.5/en/alter-table.html
+		3>添加列
+		需求：商品表中增加列商品id(gid) 字符类型
+		alter table goods add gid char(10);
+		4>删除列
+		需求:商品表中删除pid列
+		alter table goods drop column pid;
+	c4.表结构的删除
+		语法:drop table 表名;
+		注意：删除表结构后，数据也不复存在
+		需求:删除表goods
+		drop table goods;
+
+
+
+
 
 
 
@@ -126,4 +173,13 @@ update		修改、更新
 delete      删除
 grant       赋予、给与
 revoke      回收
+data   		数据
+type		类型
+admin       管理员
+add 		增加
+modify      修改
+rename		重命名
+Syntax		语法
+column		列
+change		修改
 --------------------
