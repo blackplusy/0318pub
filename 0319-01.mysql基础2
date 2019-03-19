@@ -230,7 +230,12 @@ a7.常用函数
 	select avg(shop_price),round(avg(shop_price),2) from ecs_goods;
 
 
-
+练习：
+1.查询ecs_goods表中本店售价高于3000的所有信息
+2.查询ecs_goods表中商品名称为诺基亚E66或者iphone的所有信息
+3.查询ecs_goods表中商品本店售价低于2000并且市场售价高于2000的所有商品名称
+4.查询ecs_goods表中商品本店售价范围在2000-2500或者本店售价在1000-1500的所有商品名称和市场售价
+5.查询ecs_goods表中商品名称以诺基亚开头或者本店售价高于3000的所有商品信息
 
 
 
