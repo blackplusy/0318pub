@@ -137,6 +137,12 @@ e.数据的查询
 
 练习：
 1.创建表student，里面3个列，名字(name)字符类型，最多放10个字符,年龄(age) 数字类型，生日(birth) 日期类型
+	create table student(
+		name char(10),
+		age  int,
+		birth date
+	);
+
 2.新增学员数据数据
 heygor  18  1998-02-02
 baigor  19  1998-02-02
@@ -144,11 +150,31 @@ simida  20  1998-02-02
 koiniqiwa  35  1998-02-02
 haleshao  88  1998-02-02
 odusang  18  1998-02-02
+	insert into student values
+	('heygor',18,'1998-02-02'),
+	('baigor',19,'1998-02-02'),
+	('simida',20,'1998-02-02'),
+	('koniiqiwa',35,'1998-02-02'),
+	('haleshao',88,'1998-02-02'),
+	('odusang',18,'1998-02-02');
 3.修改名字为heygor的年龄为200
+	update student set age=200 where name='heygor';
+
 4.修改baigor的名字为gaga
+	update student set name='gaga' where name='baigor';
+
 5.查询所有学员名字
+	select name from student;
+
 6.查询年龄是88岁的学员所有信息
+	select * from student where age=88;
+
 7.查询年龄为35的学员的名字和生日
+	select name ,birth from student where age=35;
+	
+
+
+
 
 
 
