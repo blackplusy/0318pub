@@ -248,7 +248,16 @@ shop_price between 1000 and 1500;
 5.查询ecs_goods表中商品名称以诺基亚开头或者本店售价高于3000的所有商品信息
 select * from ecs_goods where goods_name like '诺基亚%' or shop_price>3000;
 
-
+制作思维导图
+1.常用思维导图软件
+	xmind
+	freemind
+	mind manager
+	processon
+	百度脑图
+2.思维导图的作用
+	整理需求
+	整理知识
 
 
 
