@@ -199,6 +199,35 @@ a3.区间
 	select goods_name from ecs_goods where shop_price>=2300 and shop_price<=5000;
 	select goods_name from ecs_goods where shop_price between 2300 and 5000;
 	
+a4.模糊查询
+	当信息不完整时候查询，通常是和字符串一起使用
+	like  	模糊查询关键字
+	_		一个字符
+	%		任意个字符
+	需求：查询ecs_goods表中商品名称以诺基亚开头的所有信息
+	select * from ecs_goods where goods_name like '诺基亚%';
+	需求：查询ecs_goods表中商品名称以6结尾的商品的名称
+	select * from ecs_goods where goods_name like '%6';
+	需求：查询ecs_goods表中商品名称是6个字符的所有信息
+	select * from ecs_goods where goods_name like '______';
+a5.空值的查询
+	null：没有任何数据类型，没有任何值,不能用于比较和运算
+	查询时候使用is null 或者is not null
+	需求：查询ecs_goods表中suppliers_id为空的所有数据
+	select * from ecs_goods	where suppliers_id is null;
+	需求：查询ecs_goods表中suppliers_id不为空的所有数据
+	select * from ecs_goods	where suppliers_id is not null;
+a6.in
+	在..里面，或的关系
+	需求：查询ecs_goods表中商品名称是KD876或者诺基亚的所有信息
+	select * from ecs_goods where goods_name in('KD876','诺基亚');
+a7.常用函数
+	upper()		大写
+	lower()		小写
+	round()		小数点后保留几位
+	avg()       平均值
+	select goods_name,lower(goods_name),upper(lower(goods_name)) from ecs_goods;
+	select avg(shop_price),round(avg(shop_price),2) from ecs_goods;
 
 
 
@@ -237,5 +266,7 @@ value 	值
 references 参考、借鉴
 set     设置
 where	哪里
+between 在...之内，之间
+like	像
 
 
