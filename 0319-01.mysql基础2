@@ -118,6 +118,7 @@ d.数据的删除
 	需求:删除goods表中所有数据
 	truncate table goods;
 e.数据的查询
+        ecshop表结构说明：http://book.ecmoban.com/images/db.htm
 	e1.查询的分类
 		简单查询
 		多表查询
