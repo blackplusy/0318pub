@@ -172,6 +172,33 @@ odusang  18  1998-02-02
 7.查询年龄为35的学员的名字和生日
 	select name ,birth from student where age=35;
 	
+a.where 条件
+简单查询的语法：select 列 from 表 where 条件;
+a1.比较运算
+	>	大于
+	<   小于
+	=   等于
+	>=	大于等于
+	<=	小于等于
+	!=	不等于
+	<>	不等于
+	需求：查询ecs_goods表中本店售价高于2000的商品名称和本店售价
+	select goods_name,shop_price from ecs_goods where shop_price>2000;
+	需求：查询ecs_goods表中商品名称不是KD876的所有信息
+	select * from ecs_goods where goods_name<>'KD876';
+a2.关系运算
+	and		同时满足
+	or 		满足一个条件即可
+	not     不满足条件
+	需求：查询ecs_goods表中本店售价高于2000并且低于2500的商品的所有信息
+	select * from ecs_goods where shop_price>2000 and shop_price<2500;
+a3.区间
+	between...and...
+	包括区间中的两个端点，小在前，大在后
+	需求：查询ecs_goods表中本店售价范围在2300和5000之间的所有商品名称
+	select goods_name from ecs_goods where shop_price>=2300 and shop_price<=5000;
+	select goods_name from ecs_goods where shop_price between 2300 and 5000;
+	
 
 
 
