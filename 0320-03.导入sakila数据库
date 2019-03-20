@@ -1,0 +1,23 @@
+c.saklia数据库的导入
+1.下载地址
+https://dev.mysql.com/doc/index-other.html
+注意：zip是win下面压缩方式，tgz是linux下压缩方式
+2.解压文件
+3.进入到解压后的文件夹
+4.打开命令提示符(地址栏中输入cmd)
+5.登陆mysql
+mysql -u root -p
+6.导入sakila-schema.sql
+source sakila-schema.sql;
+7.导入sakila-data.sql
+source sakila-data.sql;
+
+
+
+
+
+
+
+
+
+
