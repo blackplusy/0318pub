@@ -82,6 +82,26 @@ a2.内联查询
 	and goods_name='KD876';
 练习：
 	查询商品分类名称是3G手机的商品名称有哪些？
+1.分析列
+	分类名称
+	商品名称
+2.分析表
+	cat_name  	ecs_category
+	goods_name  ecs_goods
+3.关联
+	select * from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id;
+4.过滤
+	select g.goods_name from ecs_goods g,ecs_category c
+	where g.cat_id=c.cat_id
+	and c.cat_name='3G手机';
+注意：
+1.表别名： 表名 表别名 用简单名字代替表名
+2.每个列属于哪张表一定要表示
+
+练习：
+	查询本店售价在2000和3000之间的所有商品分类名称
+	
 
 
 
