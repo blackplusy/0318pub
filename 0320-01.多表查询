@@ -117,6 +117,37 @@ d.update achievement set mark=87 where id=3;
 e.delete from student where name='Betty';
   delete from achievement where id=6;
 
+--1.jpg
+a.select * from test1 where department='计算机系'
+and place='北京';
+b.update test1 set department='信息学院'
+where department='计算机系';
+c.select t1.no,t1.name,t2.grade,t2.courses  from test1 t1,test2 t2
+where t1.no=t2.no
+and t2.grade>75;
+
+
+左联查询、右联查询
+左联查询(左表中数据都有)
+语法:select 列 from 左表 left join 右表 on 左表.列=右表.列;
+左联查询结果：内联查询结果+左表中有，右表中没有的，右表对应位置为空
+
+create table aa(
+	a int
+);
+insert into aa values(1),(2),(3);
+create table bb(
+	a int,
+	b char(10)
+);
+insert into bb values(1,'a'),(2,'b'),(4,'d');
+select * from aa left join bb on aa.a=bb.a;
+
+右联查询(右表中数据都有)
+语法：select 列 from 左表 right join 右表 on 左表.列=右表.列;
+select * from aa right join bb on aa.a=bb.a;
+
+
 
 
 
