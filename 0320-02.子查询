@@ -22,4 +22,20 @@ delete from student where name='Betty';
 单行子查询：子查询返回的结果是一个，可以用=，in
 多行子查询: 子查询返回的结果是多个，用in
 
+--7.jpg
+1.
+a.查询c表中满足条件的c#
+select c# from c where cn='税收基础';
+b.查询sc表中c#为上面查询出来结果的s#
+select s# from sc where c# in (select c# from c where cn='税收基础');
+c.查询s表中s#为上面查询出来结果的sn,s#
+select s#sn, from s where s# in (select s# from sc where c# in (select c# from c where cn='税收基础'));
 
+2.
+a.查询sc表中满足条件的s#
+select s# from s where c#='C2';
+b.查询s表中s#为上面查询出来结果的sn，sd
+select sn,sd from s where s# in (select s# from s where c#='C2');
+
+3.
+select sn,sd from s where s# in (select s# from s where c#!='C5');
