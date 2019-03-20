@@ -1,0 +1,103 @@
+复习内容
+1.约束
+	主键
+	唯一
+	非空
+	检查
+	外键(参考)
+2.数据的新增
+	向所有列新增数据
+	语法：insert into 表 values(值1，值2...);
+	向指定列新增数据
+	语法：insert into 表(列1，列2) values(值1，值2);
+3.数据的修改
+	语法：update 表 set 列=值 where 条件;
+4.数据的删除
+	delete
+	语法：delete from 表 where 条件;
+	truncate
+	语法：truncate table 表;
+5.简单查询
+	语法：select 列 from 表 where 条件;
+6.where条件
+	a.比较
+		>
+		<
+		=
+		>=
+		<=
+		!=
+		<>
+	b.关系
+		and
+		or
+		not
+	c.区间
+		between...and...
+	d.模糊查询
+		like
+		_
+		%
+	e.空值查询
+		is null
+		is not null
+	f.in
+		in(a,b,c)
+	g.常用函数
+		upper
+		lower
+		round
+		avg
+
+==========================================
+a.多表查询
+当一张表无法满足条件时候，需要使用多表查询
+a1.笛卡尔积
+两张表不做任何关联产生的数据就是笛卡尔积，数据量会成倍增加，无效数据成倍增加
+select count(*) from ecs_goods;
+select count(*) from ecs_category;
+select count(*) from ecs_goods,ecs_category;
+a2.内联查询
+为了避免笛卡尔积的出现，使用内联查询，左联查询、右联查询
+语法：
+	select 列 from 表1，表2 where 表1.列=表2.列;
+	select 列 from 表1 inner join 表2 on 表1.列=表2.列;
+关联列判断方法
+	1.列名相同
+	2.作用相同
+	3.主外键关系
+需求：查询商品名称是KD876的商品分类名称
+1.分析列
+	商品名称
+	分类名称
+2.分析表
+	商品名称   goods_name  ecs_goods
+	分类名称   cat_name    ecs_category
+3.关联
+	select * from ecs_goods,ecs_category
+	where ecs_category.cat_id=ecs_goods.cat_id;
+4.过滤
+	select cat_name from ecs_goods,ecs_category
+	where ecs_category.cat_id=ecs_goods.cat_id
+	and goods_name='KD876';
+练习：
+	查询商品分类名称是3G手机的商品名称有哪些？
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+inner  内部
+join   加入
