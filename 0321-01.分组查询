@@ -105,6 +105,7 @@ a3.分组后过滤
 	group by c.city
 	having count(first_name)>1;
 
+通过嵌套查询，查询城市名称是shenzhen的客户名字有哪些？
 
 
 
