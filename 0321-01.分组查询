@@ -70,12 +70,42 @@ a2.分组
 		select c.cat_name,count(goods_name) from ecs_goods g,ecs_category c
 		where g.cat_id=c.cat_id
 		group by c.cat_name;
-		
 
 查询city表中每个国家有多少个城市？要求显示country_id，城市数量
+select country_id,count(city) from city group by country_id;
 
 查询每个城市有多少个客户？要求显示城市名称，客户数量
 注意：客户数量可以通过统计名字实现
+分析列：
+	城市名称
+	客户名字
+分析表：
+	city
+	address
+	customer
+关联：
+	select * from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and   a.address_id=cu.address_id;
+过滤：
+	select c.city,count(first_name) from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and   a.address_id=cu.address_id
+	group by c.city;
+
+
+a3.分组后过滤
+	where	分组前查询，后面不能直接跟分组函数
+	having	分组后查询，后面可以直接跟分组函数，有group by才能有having，没有group by就没有having
+
+查询城市客户数量超过1的城市名称
+	select c.city,count(first_name) from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and   a.address_id=cu.address_id
+	group by c.city
+	having count(first_name)>1;
+
+
 
 
 
