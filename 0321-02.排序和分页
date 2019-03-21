@@ -60,6 +60,31 @@ a.select * from student order by ssex desc;
 b.select * from score where degree between 80 and 100;
 
 
+--3.png
+select * from dt_pay where salary>(select avg(salary) from dt_pay);
+select * from dt_pay;
+truncate table dt_pay;
+注意：delete不会初始化自增字段，truncate会使自增字段初始化
+--4.png
+1.
+a.select xm,zkzh from tb_student where score>0 and score<5;
+b.select * from tb_student where xm='张三' and score=5;
+2.
+select  c.成绩表 from 学生表 s,成绩表 c
+where s.准考证号=c.准考证号
+and s.年龄 between 20 and 35
+order by s.准考证号 desc;
+
+--5.bmp
+a.select avg(english) from mark;
+b.
+select ma.math,cu.name,cu.address,cu.telno   from cust cu,mark ma
+where cu.studentno=ma.studentno
+and cu.studentno in (11,22,33,44,55);
+
+
+
+
 
 
 
