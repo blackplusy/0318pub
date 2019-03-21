@@ -1,0 +1,89 @@
+0321
+----
+复习
+1.多表查询
+	笛卡尔积
+	内联查询
+		语法：
+			select 列 from 表1，表2 where 表1.列=表2.列;
+			select 列 from 表1 inner join 表2 on 表1.列=表.列;
+		需求：
+			查询商品名称是KD876的分类名称
+			select c.cat_name from ecs_goods g 
+			inner join ecs_category c 
+			where g.cat_id=c.cat_id
+			and g.goods_name='KD876';
+	左联查询(左表中所有数据都有)
+		语法：
+			select 列 from 左表 left join 右表 on 左表.列=右表.列;
+	右联查询(右表中所有数据都有)
+		语法：
+			select 列  from 左表 right join 右表 on
+			左表.列=右表.列;
+2.子查询
+	一条SQL语句的执行依赖于另外一条SQL语句的执行结果
+	子查询分为单行子查询、多行子查询
+	单行：= in
+	多行：in
+------------------------
+a.分组查询
+分组：按照某种属性进行分类
+a1.分组函数
+	max		最大
+	min 	最小
+	avg		平均
+	sum		求和
+	count   计数
+	分组函数通常和分组一起使用，但是也可以单独使用
+	需求：查询ecs_goods表中本店售价最高，最低，平均是多少
+	select max(shop_price),min(shop_price),avg(shop_price)
+	from ecs_goods;
+	需求：查询ecs_goods表中本店售价最高的商品名称？
+	select max(shop_price) from ecs_goods;
+	select goods_name from ecs_goods where shop_price=(select max(shop_price) from ecs_goods);
+a2.分组
+	语法：select 列 from 表
+			where 条件
+				group by 分组条件
+					having 分组后过滤条件;
+	判断下列SQL语句是否正确
+	select cat_id from ecs_goods group by cat_id;--yes
+	select goods_name,cat_id from ecs_goods group by cat_id;--no
+	select * from ecs_goods group by cat_id;--no
+	注意：每后面跟的都是分组条件
+	需求：
+	查询ecs_goods表每个cat_id对应多少商品
+	select cat_id,count(*) from ecs_goods group by cat_id;
+	查询每种分类右多少个商品，要求显示分类名称，商品数量
+	注意：如果要在选择出的数据中显示哪个列就一定要用这个列进行分组
+	http://book.ecmoban.com/images/db.htm
+	分析列：
+		分类名称
+		商品数量
+	分析表：
+		分类名称  ecs_category
+		商品数量  ecs_goods
+	关联：
+		select * from ecs_goods g,ecs_category c
+		where g.cat_id=c.cat_id;
+	过滤：
+		select c.cat_name,count(goods_name) from ecs_goods g,ecs_category c
+		where g.cat_id=c.cat_id
+		group by c.cat_name;
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
