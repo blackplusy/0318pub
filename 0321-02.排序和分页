@@ -1,0 +1,45 @@
+通过嵌套查询，查询城市名称是shenzhen的客户名字有哪些？
+1.查询city表中满足条件的city_id
+select city_id from city where city='shenzhen';
+2.查询address表中city_id为上面查询出来结果的address_id
+select address_id from address where city_id in (select city_id from city where city='shenzhen');
+3.查询customer表中address_id为上面查询出来结果的客户名字
+select first_name from customer where address_id in (select address_id from address where city_id in (select city_id from city where city='shenzhen'));
+
+b.排序和分页
+b1.排序
+	顺序 从小到大 
+		order by 列
+		order by 列 asc
+	倒序 从大到小
+		order by 列 desc;
+	完整语法：
+	select 列 from 表
+		where 条件
+			group by 分组条件
+				having 分组后过滤条件
+					order by 排序条件;
+	需求：查询ecs_goods表所有数据，按照市场售价从小到大进行排列
+	select * from ecs_goods order by market_price;
+	需求：查询ecs_goods表所有数据，按照本店售价从大到小进行排列
+	select * from ecs_goods order by shop_price desc;
+b2.分页
+	limit
+	需求：查询ecs_goods表中前10行数据
+	select * from ecs_goods limit 10;
+	需求：查询ecs_goods表中前11-20行数据
+	select * from ecs_goods limit 10,10;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
