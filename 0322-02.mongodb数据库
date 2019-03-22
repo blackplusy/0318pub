@@ -92,3 +92,19 @@ b7.文档的新增
 	db.xiyouji.insert({name:'5kong',jingli:{kill:100,hit:2}})
 	新增多个文档
 	db.xiyouji.insert([{name:'redhair'},{name:'sweet'},{name:'puti'}])
+b8.文档的删除
+	删除指定文档
+	db.xiyouji.remove({name:'redhair'})
+	删除所有文档
+	db.xiyouji.remove({})
+b9.文档的修改
+	文档的替换
+	db.xiyouji.update({name:'tangsir'},{age:100})
+	文档的修改($set)
+	db.xiyouji.update({name:'shasir'},{$set:{age:100}})
+	重命名($rename)
+	db.xiyouji.update({age:100},{$rename:{'age':'nianling'}})
+	列增长($inc)
+	db.xiyouji.update({name:'shasir'},{$inc:{nianling:200}})
+	修改多行
+	db.xiyouji.update({name:'8jie'},{$set:{age:20}},{multi:true})
