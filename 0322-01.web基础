@@ -1,0 +1,44 @@
+1.访问网站的过程
+a.打开浏览器
+b.输入网址
+c.系统回到系统自带的hosts文件中搜索是否有网址对应的IP地址
+	hosts文件:主机名绑定文件
+	192.168.1.10 www.baidu.com
+d.hosts文件中没有找到对应记录时候，通过网络把数据传输到DNS服务器中
+	DNS服务器:域名解析服务器(域名--IP)
+e.请求通过网络发送给对应网站
+f.网站把请求对应的响应发回浏览器
+2.URL(统一资源定位器)
+	http://sports.sina.com.cn:80/slamdunk/live.shtml?id=2019032201
+	URL的组成：
+	a.协议   			http
+	b.域名              sports.sina.com.cn
+	c.端口              80
+	d.虚拟目录 			slamdunk
+	e.访问文件 			live.shtml
+	f.访问文件参数 		id=2019032201
+a.协议
+	一组规则规范
+	http协议：
+	超文本传输协议，规定了数据在传输过程中先传什么后传什么,怎么传
+		超文本(富文本)：声音、图像、视频
+		普通文本
+	http协议的特点:
+		无状态:彼此不记录过去的行为
+	http协议的请求
+		get   请求的信息显示在URL上，相对不安全，主要用于浏览
+		https://s.taobao.com/search?q=lv&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20190322&ie=utf8
+		https://s.taobao.com/search?q=zara&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20190322&ie=utf8
+		post  请求的信息显示在请求体上，相对安装，主要用于提交
+	cookie&session
+		cookie  访问记录，验证机制，定投广告
+		session 验证机制，30分钟超时
+	状态码
+		200  	2开头请求成功
+		302		3开头移动或者缓存
+		404		4开头客户端请求有问题
+		500		5开头服务端有问题
+
+
+
+
