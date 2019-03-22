@@ -1,0 +1,65 @@
+mongodb
+1.常见数据库
+	oracle
+	mysql
+	sqlserver
+	mongodb
+	redis
+2.mongodb
+a.下载安装
+mongodb官网：
+www.mongodb.org
+mongodb下载地址:
+https://www.mongodb.com/download-center/community
+注意：
+community	社区版(建议)
+enterprise  企业版
+下载时候需要注意操作系统
+	win
+	linux
+	unix
+	32位操作系统
+	64位操作系统
+安装时候需要注意
+	mongodb compass不要安装
+b.mongodb基础
+b1.mongodb的服务
+	mongod   mongodb的主服务
+	mongo    mongodb的客户端服务
+b2.mongodb的端口
+	27017
+b3.mongodb服务的启动(命令提示符)
+	1.mongodb启动命令：
+	win+r--cmd
+	mongod --dbpath d:\data 
+	mongod --dbpath d:\data --logpath d:\data\mongo.log
+	--dbpath 数据存放的路径(文件夹)
+	--logpath日志文件存放的位置(文件)
+	--fork   后台运行
+	注意：dbpath路径一定要存在
+	2.mongodb启动方式
+		1>进入到命令所在位置进行操作
+		2>设置环境变量
+		计算机--属性--高级--环境变量--系统变量--Path中添加mongodb的bin文件夹的路径
+		;D:\mongodb\bin
+		确定--确定--确定
+	3.查看进程
+		win+r--cmd
+		tasklist | find "mongod"
+b4.mongodb的登陆
+	mongo
+		登陆本地test数据库
+	mongo 127.0.0.1/admin
+		登陆ip为127.0.0.1的admin数据库
+	mongo 127.0.0.1:27017/admin
+		登陆IP为127.0.0.1端口为27017的admin数据库
+
+b5.mongodb的基础
+	mysql      mongodb
+	数据库     数据库
+	表         集合
+	数据       文档
+	数据库分为2部分：数据库软件，数据库数据
+	常说的数据库是数据库的数据
+	mongodb的数据库是由集合组成
+	mongodb的集合是由文档组成
