@@ -63,3 +63,32 @@ b5.mongodb的基础
 	常说的数据库是数据库的数据
 	mongodb的数据库是由集合组成
 	mongodb的集合是由文档组成
+	db 		查看当前数据库的名字
+	show databases
+	show dbs
+			当前有哪些数据库
+	use local
+			数据库切换为local
+	show tables
+	showcolletions
+			当前数据库有哪些集合
+	db.startup_log.find()
+			查看startup_log集合中所有的文档
+b6.CURD(增删改查)
+	文档的新增
+	db.xiyouji.insert({name:'8jie',age:18})
+	文档的查看
+	db.xiyouji.find()
+	文档的修改
+	db.xiyouji.update({name:'8jie'},{$set:{age:100}})
+	文档的删除
+	db.xiyouji.remove({age:100})
+b7.文档的新增
+	新增普通文档
+	db.xiyouji.insert({name:'shasir',age:300})
+	新增文档指定_id
+	db.xiyouji.insert({_id:0,name:'8jie'})
+	新增内嵌文档
+	db.xiyouji.insert({name:'5kong',jingli:{kill:100,hit:2}})
+	新增多个文档
+	db.xiyouji.insert([{name:'redhair'},{name:'sweet'},{name:'puti'}])
