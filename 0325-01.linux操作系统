@@ -169,3 +169,11 @@
 	putty
 	ssh
 	secure crt
+/opt
++----A
+|    +---a1
+|    +---a2
+|
++----B
+     +---c
+     +---d   
