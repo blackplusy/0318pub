@@ -96,14 +96,47 @@
 				目录切换到/var/log目录下
 			cd ..
 				目录切换到上一级目录
+6.忘记密码
+	e  
+	e  
+	下  
+	e 
+	添加空格1 回车  b 
+	passwd root
+	exit
+7.网络设置
+	a.linux的网络设置
+		a1.准备ip
+		要求：ip地址和电脑ip在同一网段(原因：交换机通信2个条件1.硬件正常2.同一网段)
+		win7:win+r--cmd(打开命令提示符)--ipconfig--本地连接 IPV4地址 子网掩码
+		ping 192.168.7.44  (无法访问目标主机说明该IP没人使用，可以用于linux的IP设置)
+			可以搜索IP的范围是
+					192.168.7.1-192.168.7.254
+			注意： 
+					192.168.7.0 	网段、网络号 
+			      	192.168.7.255   广播地址
+		a2.linux中查看IP地址
+			ifconfig              	查看当前网卡信息(活跃)
+			ifconfig eth0   		查看linux第一块网卡信息
+		a3.临时设置IP(重启网络后失效)
+			ifconfig eth0 192.168.7.44
+			注意：service network restart  重启网络
+		a4.命令设置IP(重启网络后生效)
+			setup--network configuration--edit devices--eth0
+			--名称、设备名不动--取消use dhcp(空格)--设置IP、子网掩码
+			--确定--save--save&quit--exit--service network restart
+			注意：网络IP获取2种方式
+			     DHCP:		动态获取IP
+			     STATIC:	静态设置IP
+	b.虚拟机的网络设置
+		右键标签--设置--网络适配器--桥接--复制物理网络连接状态
+		b1.桥接
+			客户机可以和局域网中其他主机进行通信
+		b2.网络地址转换
+			客户机可以通过地址转换共享主机IP进行上网，无法和局域网中其他主机进行通信
+		b3.仅主机
+			客户机和宿主机的私有通道无法和其他主机进行通信
+	c.检查网络
+		win: win+r--cmd--ping linux的ip
+		linux:  ping windows的ip
 
-
-
-
-
-
-
-
-
-
-	
