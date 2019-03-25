@@ -169,11 +169,51 @@
 	putty
 	ssh
 	secure crt
-/opt
-+----A
-|    +---a1
-|    +---a2
-|
-+----B
-     +---c
-     +---d   
+	mkdir A/a1 A/a2 B/c B/d -p
+	mkdir A/a{1,2} B/{c,d} -p
+	/opt
+	+----A
+	|    +---a1
+	|    +---a2
+	|
+	+----B
+	     +---c
+	     +---d     
+9.文件的操作
+	a.创建文件
+		touch   a
+			当前目录下创建空文件a
+		touch /opt/b c
+			/opt目录下创建空文件b当前目录下创建空文件c
+		重定向
+			>    覆盖，如果没有该文件自动创建
+				echo heygor>zhenshuai  覆盖heygor到当前目录下zhenshuai文件中
+			>> 	 追加，如果没有该文件自动创建
+				zhenshuai>>heygor      追加zhenshuai到当前目录下heygor文件中	
+			1>	写入正确信息到文件中
+			2>	写入错误信息到文件中
+			&>	写入所有信息到文件中
+		补充：echo  打印、输出
+		vi/vim
+	b.复制文件
+		cp 1.log A     	复制当前目录下1.log到当前目录下A目录(A目录存在)
+		cp 1.log 4.log  复制当前目录下1.log到当前目录下并且重命名为4.log(4.log不存在)
+	c.移动文件
+		mv 4.log A    	剪切当前目录下的4.log到当前目录下的A目录中(A目录存在)
+		mv 3.log bbb    重命名当前目录下的3.log为bbb(bbb不存在)
+	d.删除文件
+		rm  2.log 		删除当前目录下2.log文件
+		rm -f 1.log     强制删除当前目录下1.log
+	e.查看
+		cat     		不分页显示文件内容
+			cat install.log
+		less 			分页显示文件内容，可以向上、向下进行翻页
+			less install.log
+		more 			分页显示文件内容，可以向下翻页
+			more install.log
+		head  			查看文件前几行
+			head -3 install.log
+		tail    		查看文件后几行
+			tail -2 install.log
+		vi
+	f.修改
