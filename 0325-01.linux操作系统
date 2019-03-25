@@ -189,10 +189,13 @@
 			>    覆盖，如果没有该文件自动创建
 				echo heygor>zhenshuai  覆盖heygor到当前目录下zhenshuai文件中
 			>> 	 追加，如果没有该文件自动创建
-				zhenshuai>>heygor      追加zhenshuai到当前目录下heygor文件中	
+				echo zhenshuai>>heygor      追加zhenshuai到当前目录下heygor文件中	
 			1>	写入正确信息到文件中
+				ls a c 1>1.log
 			2>	写入错误信息到文件中
+				ls b d 2>2.log
 			&>	写入所有信息到文件中
+				ls f g &>3.log
 		补充：echo  打印、输出
 		vi/vim
 	b.复制文件
