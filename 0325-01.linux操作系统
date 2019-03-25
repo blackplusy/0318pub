@@ -139,4 +139,29 @@
 	c.检查网络
 		win: win+r--cmd--ping linux的ip
 		linux:  ping windows的ip
+8.目录操作
+	a.创建目录(mkdir)
+		mkdir a
+			当前目录下创建空目录a
+		mkdir b c
+			当前目录下创建空目录b和空目录c
+		mkdir d/e/f -p
+			创建级联目录d/e/f
+		mkdir "g  h"
+			当前目录下创建g  h目录
+		mkdir i\  j
+			当前目录下创建i  j目录
+		补充：tree  树状显示文件结构
+		注意：级联目录创建必须加-p，特殊符号可以用双引号或者\(转义符)
+	b.复制目录(cp)
+		注意：复制目录时候加-r
+		 cp -r d a 	复制当前目录下的d目录到a目录中(a目录存在)
+		 cp -r d f  复制当前目录下的d目录到当前目录下并且命名为f
+	c.移动目录(mv)
+		 mv a b 	剪切当前目录下的a目录到当前目录下的b目录中(b目录存在)
+		 mv b a     重命名当前目录下的b目录为a
+	d.删除目录
+		rmdir c    删除空目录c
+		rm -r f    删除当前目录下的f目录
+		rm -rf d   强制删除当前目录下的d目录
 
