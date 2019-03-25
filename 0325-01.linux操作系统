@@ -165,3 +165,7 @@
 		rm -r f    删除当前目录下的f目录
 		rm -rf d   强制删除当前目录下的d目录
 
+管理工具：
+	putty
+	ssh
+	secure crt
