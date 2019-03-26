@@ -1,0 +1,123 @@
+复习：
+hostname
+who
+whoami
+pwd
+cd
+ls
+mkdir
+cp
+mv
+rmdir
+touch
+echo
+cat
+less
+more
+head
+tail
+vi
+tree
+setup
+ifconfig
+service
+============================================
+1.网络设置补充
+	a.查看网卡信息
+		ifconfig
+	b.临时设置IP地址
+		ifconfig eth0 192.168.7.44
+	c.命令设置IP地址
+		setup-----
+	d.修改配置文件，修改IP地址
+		linux第一块网卡配置文件
+		vim /etc/sysconfig/network-scripts/ifcfg-eth0
+		DEVICE=eth0    				设备名称
+		BOOTPROTO=none 				启动协议(dhcp,static)
+		HWADDR=00:0c:29:8b:29:94    硬件mac地址
+		ONBOOT=yes 					是否随开机启动而启动，yes：是 no：否
+		NETMASK=255.255.254.0		子网掩码
+		IPADDR=192.168.7.44 		IP地址
+		TYPE=Ethernet 				上网类型
+		注意：重启网络后生效
+		service network restart
+2.主机名设置
+	a.查看主机名
+		hostname
+	b.临时设置主机名(重启主机后失效)
+		hostname heygor.com.cn
+	c.永久设置主机名(重启主机后生效)
+		 vim /etc/sysconfig/network
+		 HOSTNAME=gaga.heygor.com
+3.绑定主机名
+	vim /etc/hosts
+	192.168.7.44 gaga.heygor.com
+4.selinux设置
+	vim /etc/selinux/config
+	SELINUX=disabled
+5.防火墙设置
+	service iptables status
+		查看防火墙的状态
+	service iptables stop
+		关闭防火墙
+	service iptables start
+		启动防火墙
+项目部署基础(安装系统后基本操作)
+1.设置IP
+2.设置主机名
+3.绑定主机名
+4.关闭selinux
+5.关闭防火墙
+
+
+6.包、压缩文件、压缩包
+包：打包(tar),所有的包文件都是以.tar结尾
+tar -cvf test.tar Desktop/ install.log*
+	创建包文件test.tar打包内容为Desktop目录和以install.log开头的文件或目录
+tar -tvf test.tar
+	查看包文件中打包的内容
+tar -xvf test.tar
+	解包包文件test.tar到当前目录下
+tar -xvf test.tar -C /opt/
+	解包包文件test.tar到/opt目录下(指定目录需要-C)
+
+压缩文件：
+不能压缩目录
+du -sh  install.log 
+	查看install.log文件大小
+gzip install.log
+	压缩当前目录下的install.log文件
+gzip -l install.log.gz
+	查看压缩文件install.log.gz的压缩属性信息
+gzip -d install.log.gz
+	解压压缩文件到当前目录下
+
+压缩包
+先打包后压缩，压缩包通常以.tar.gz结尾或者以tgz结尾
+-------------------------------
+tar -cvf test1.tar install.log*
+gzip test1.
+------------------------------
+tar -czvf test2.tgz Desktop/ install.log
+	创建压缩包test2.tgz打包压缩内容为Desktop和install.log
+tar -tzvf test2.tgz
+	查看压缩包test2.tgz打包压缩内容
+tar -zxvf test2.tgz
+	解压压缩包test2.tgz到当前目录下
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
