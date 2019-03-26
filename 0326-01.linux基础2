@@ -105,6 +105,99 @@ tar -tzvf test2.tgz
 tar -zxvf test2.tgz
 	解压压缩包test2.tgz到当前目录下
 
+安装vmware-tools
+1.解压.tar.gz文件到指定目录
+2.进入到解压后的目录
+3.执行命令
+	./vmware-install.pl
+4.回车
+5.重启
+
+7.用户和权限
+a.用户
+	用户涉及到的配置文件
+		/etc/passwd      用户配置文件
+		/etc/shadow		 密码配置文件
+		/etc/group  	 组配置文件
+	创建
+		useradd simon    创建用户simon
+		passwd  simon    给simon用户设置密码
+	修改
+		锁定
+		usermod -L heygor 锁定用户heygor
+		解锁
+		usermod -U heygor 解锁用户heygor
+	删除
+		userdel -r heygor 删除heygor用户所有信息
+
+b.权限
+	b1.查看权限
+		ls -l install.log
+		ll install.log
+	b2.文件属性信息
+		-rw-r--r-- 1 root root 35291 03-26 01:30 install.log
+		1：文件类型  	d:目录  -：普通文件
+		2-10：文件权限  
+		11：文件节点
+		12：拥有者
+		13：拥有组
+		14:文件大小
+		15：最后修改时间
+		16：文件名字
+	b3.文件的权限
+		读
+			目录：可以列表显示
+			文件:可读
+		写
+			目录：可以创建、重命名、删除文件
+			文件：修改文件内容
+		执行
+			目录:可以进入
+			文件：可执行文件(通常是2进制文件或者脚本文件)
+	b4.权限的分组
+		rw- 			r-- 			r--
+		拥有者权限      拥有组权限       其他人权限
+	b5.系统判断权限的过程
+		1.判断用户是否为文件的拥有者，如果是，赋予拥有者权限
+		2.如果不是，判断用户是否为拥有组成员，如果是，赋予拥有组权限
+		3.如果都不是，赋予其他人权限
+		补充:id 用户名 查看用户组信息
+	b6.修改权限
+		chmod  	直接修改权限
+			字符方式
+				u 	拥有者
+				g 	拥有组
+				o   其他人
+				a   所有人
+				chmod u+x install.log
+					修改文件权限拥有者增加执行权限
+				chmod g+x,o+x install.log
+					修改文件权限拥有组，其他人增加执行权限
+				chmod a-x install.log
+					修改文件权限所有人取消执行权限
+			数字方式
+				r:4
+				w:2
+				x:1
+				-:0
+				chmod 777 install.log
+					修改权限所有用户拥有读写执行权限
+				chmod 000 install.log
+					修改权限，所有用户没有任何权限
+		chown	通过修改文件属主来修改权限
+			chown heygor install.log
+				修改文件拥有者为heygor
+			chown :bin install.log
+				修改文件拥有组为bin
+			chown root:root install.log
+				修改文件拥有者root，拥有组root
+
+
+
+
+
+
+
 
 
 
