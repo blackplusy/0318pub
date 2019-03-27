@@ -1,0 +1,109 @@
+hostname
+who
+whoami
+pwd
+ls
+cd
+mkdir
+rm
+rmdir
+cp
+mv
+touch
+echo
+cat
+less
+more
+head
+tail
+vi
+setup
+ifconfig
+ping
+service
+tar
+gzip
+du -sh
+useradd
+usermod
+userdel
+passwd
+id 
+chmod
+chown
+top
+ps
+kill
+netstat
+free
+vmstat
+rpm
+tree
+=========================================
+1.linux中软件安装方法
+	a.rpm安装(依赖包顺序)
+	b.自动安装
+	c.源码安装
+	d.二进制包安装
+2.yum自动安装(网络、本地)
+	a.加载光驱
+		标签--设置--cd\dvd--使用硬盘镜像--浏览--确定
+	b.创建目录用于后面挂载
+		mkdir /yum
+	c.挂载光驱到刚才创建好的目录中
+		mount -o loop /dev/scd0 /yum
+	d.配置yum的配置文件
+		vim /etc/yum.repos.d/rhel-debuginfo.repo
+		[rhel]               
+		name=test                       名字
+		baseurl=file:///yum/Server      系统到哪个目录中去搜索软件包
+		enabled=1 						是否开启yum自动安装1开启0关闭
+		gpgcheck=0   					是否检查光盘包0是不检查1是检查
+	e.清理yum缓存
+		yum clean all
+	f.搜索安装包
+		yum list | grep mysql
+	g.安装软件包
+		yum install mysql*
+	h.启动服务进行测试
+		service mysqld start
+		ps -ef | grep mysqld
+		netstat -an |grep 3306
+3.部署ecshop项目
+	操作系统：RHEL5
+	开发语言：php
+	web服务器：apache
+	数据库服务器：mysql
+	a.安装配置好系统
+	b.安装配置好yum
+	c.安装mysql相关服务
+		yum install mysql* -y
+	d.安装apache相关服务
+		yum install httpd* -y
+	e.安装php相关服务
+		yum install php* -y
+	f.启动服务进行测试
+		service mysqld start
+		service httpd start
+	g.把项目文件传入/var/www/html下(winscp)
+	h.修改目录权限
+		chmod -R 777 /var/www/html/ecshop
+	i.注释掉昨天在/etc/httpd/conf/httpd.conf文件中内容
+		前面加#
+	j.浏览器打开http://linux的ip/ecshop按照提示安装
+		localhost==127.0.0.1==电脑主机
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
