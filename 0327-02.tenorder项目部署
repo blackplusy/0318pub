@@ -41,4 +41,41 @@ b.安装部署tomcat（java的web服务器）
 		ps -ef | grep java
 		netstat -an |grep 8080
 		浏览器访问linux的ip:8080
+c.安装部署tenorder项目
+	1.jdk安装配置完毕
+	2.tomcat安装配置完毕
+	3.mysql安装配置(设置mysql管理员的密码)
+		mysql设置密码（前提：mysql已经启动）:
+			mysqladmin -u root password 'test'
+		测试(登录本地mysql数据库)：
+			mysql -u root -p
+	4.删除tomcat的webapps目录中所有文件
+		rm -rf /root/apache-tomcat-7.0.77/webapps/*
+	5.把tenorder项目解压后传入tomcat的webapps目录中
+	6.导入数据库
+		a.目录切换到tenorder.sql所在目录
+			 cd /root/apache-tomcat-7.0.77/webapps/tenorder/
+		b.登录mysql数据库
+			mysql -u root -p
+		c.创建数据库(登录数据库后)
+			create database ten;
+		d.数据库切换到ten
+			use ten;
+		e.导入tenorder.sql
+			source tenorder.sql;
+		f.导入成功后退出mysql
+			exit
+	7.根据安装文档修改数据库信息
+		 vim /root/apache-tomcat-7.0.77/webapps/tenorder/WEB-INF/classes/database.properties
+		根据实际情况修改用户名、密码、数据库名字
+	8.重启tomcat服务
+		a.进入到tomcat的bin目录中
+		 cd /root/apache-tomcat-7.0.77/bin/
+		b.执行./shutdown.sh
+		 ./shutdown.sh
+		c.执行./startup.sh
+		 ./startup.sh
+	9.通过浏览器访问http://linux的IP:8080/tenorder
+		
+
 	
