@@ -21,7 +21,7 @@ a.linux中安装jdk
 	g.测试java版本
 		java -version
 
-b.安装部署tenorder项目
+b.安装部署tomcat（java的web服务器）
 	1.安装配置好jdk
 	2.下载tomcat
 	3.把tomcat压缩包传入linux中
