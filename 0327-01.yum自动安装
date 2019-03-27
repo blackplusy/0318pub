@@ -92,6 +92,31 @@ tree
 		前面加#
 	j.浏览器打开http://linux的ip/ecshop按照提示安装
 		localhost==127.0.0.1==电脑主机
+4.linux中安装jdk
+	a.jdk下载
+		https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+		jdk：java开发环境
+		jre：java运行环境
+	b.把下载的jdk压缩包传入linux中
+	c.解压jdk安装包
+		tar -xzvf jdk-7u7-linux-i586.tar.gz
+	d.修改解压后的目录名字
+		mv jdk1.7.0_07/ jdk
+	e.修改系统的环境变量
+		/root/.bash_profile  /root/.bashrc
+		/etc/profile
+		修改/root/.bash_profile文件
+		在PATH和export PATH中间添加
+		export JAVA_HOME=/root/jdk
+		export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+		CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+	f.使环境变量生效
+		source /root/.bash_profile
+	g.测试java版本
+		java -version
+
+
+
 
 
 
