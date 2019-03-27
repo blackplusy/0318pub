@@ -1,0 +1,21 @@
+安装部署tenorder项目
+1.安装配置好jdk
+2.下载tomcat
+3.把tomcat压缩包传入linux中
+4.解压tomcat压缩包
+tar -xzvf apache-tomcat-7.0.77.tar.gz
+注意：tomcat目录结构
+	bin： 		存放命令
+	conf：		存放配置文件
+	lib:		存放库文件
+	logs:		存放日志
+	webapps：	存放项目
+5.启动tomcat服务
+	进入到tomcat的bin目录执行
+	cd apache-tomcat-7.0.77/bin/
+	./startup.sh
+6.检查tomcat服务
+	ps -ef | grep java
+	netstat -an |grep 8080
+	浏览器访问linux的ip:8080
+	
