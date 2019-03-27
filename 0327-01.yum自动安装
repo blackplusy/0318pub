@@ -108,7 +108,7 @@ tree
 		修改/root/.bash_profile文件
 		在PATH和export PATH中间添加
 		export JAVA_HOME=/root/jdk
-		export PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+		export PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
 		CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 	f.使环境变量生效
 		source /root/.bash_profile
