@@ -1,0 +1,32 @@
+python的输入和输出
+
+a.输入的应用场景
+b.输出的应用场景
+c.python的输出
+d.python的输入
+
+a.输入的应用场景(键盘、鼠标、mic、摄像头)
+	taobao注册用户时候
+	taobao搜索商品时候
+	直播的时候
+b.输出应用场景
+	注册用户时候提示信息
+	调试信息时候
+	搜索商品后展示内容
+c.python的输出
+	c1.直接输出
+		使用print函数把括号中内容输出到屏幕
+	c2.变量输出
+	c3.函数输出
+	c4.格式化输出
+d.python的输入
+	d1.input
+		python2中input是接受键盘输入的数字类型数据
+		python3中input是接受键盘输入的字符类型数据
+	d2.raw_input
+		python2中raw_input是受键盘输入的字符类型数据
+		python3中废弃
+		
+
+
+
