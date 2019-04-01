@@ -24,7 +24,7 @@ c.c/s架构软件
 	s:服务器
 		性能非常牛逼的电脑
 2.前端和后端
-	a.前端
+	a.前端 (vue react node)
 		html 	标记性语言  静态页面   html5 
 		js      javascript 动态(动画，交互)
 				jquery 框架
@@ -32,3 +32,51 @@ c.c/s架构软件
 			    jsp        java server page
 		css     样式表     结构美化
 		UI      美工       美化
+	b.后端
+		操作系统
+			unix
+			linux
+			windows
+		web服务器
+			apache	不支持java
+			nginx   轻量级(反向代理、负载均衡)
+			tomcat  java(8080)
+			iis     微软
+		数据库服务器
+			oracle  中大型
+			mysql   互联网
+			sqlserver 传统
+3.URL组成
+	http://sports.sina.com.cn:80/slamdunk/live.shtml?id=2019040109
+	URL:统一资源定位器
+	a.协议   http://
+	b.域名   sports.sina.com.cn
+	c.端口   :80
+	d.虚拟目录：slamdunk
+	e.访问文件：live.shtml
+	f.访问参数：?id=2019040109
+
+	a.协议
+		一组规则规范
+	  http协议(超文本传输协议)
+	  	规定了数据传输先传输什么，后传输什么，怎么传输
+	  	超文本(富文本):声音、图像、视频
+	  	普通文本
+	  http协议特点:无状态(彼此不记录过去的行为)
+	  http协议的请求：
+	  	get请求 请求信息显示在URL上，相对不安全
+		  	https://s.taobao.com/search?q=lv&imgfile=
+		  	https://s.taobao.com/search?q=zara&imgfile=
+		post请求 请求信息显示在请求体中，相对安全
+	  cookie&session
+	  	cookie  访问记录，验证信息，存放在客户端
+	  	session 验证信息，区分不同客户端，30分钟超时，存放在服务端
+	  状态码
+	  	200		2开头请求成功
+	  	302		3开头移动或者缓存
+	  	404		4开头客户端请求有问题
+	  	500 	5开头服务端有问题
+
+
+
+
