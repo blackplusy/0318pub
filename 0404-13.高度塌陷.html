@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+/*		一般情况下，我们不应该为父元素提供高度，父元素的高度应该由子元素(内容)来撑开
+		因为子元素已经浮上天，所以父元素就不会被子元素撑开，叫做高度塌陷
+		*/
+		.container {
+			width: 400px;
+			border:10px solid black;
+			/*auto会自动分配左右的外边距，左外边距=右外边距*/
+			margin:auto auto ;
+		}
+		.box {
+			width: 200px;
+			background-color: pink;
+			float: right
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+			test <br />
+		</div>
+	</div>
+
+</body>
+</html>
